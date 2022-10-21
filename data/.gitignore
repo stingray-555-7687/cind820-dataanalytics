@@ -1,0 +1,5 @@
+# ignore all zip csv and any subfolders
+*.zip
+*.csv
+*/*
+.DS_Store
