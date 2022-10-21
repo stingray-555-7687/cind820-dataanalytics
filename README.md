@@ -1,4 +1,4 @@
-# cind820 Data Analytics Project Fall 2022
+# CIND820 Data Analytics Project Fall 2022
 
 # Data Sources
 
@@ -6,15 +6,27 @@
 
 https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars
 
+[Fatality Analysis Reporting System Analytical User’s Manual, 1975-2020](https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813254)
+
+![FARS](FARS-DM.jpg)
+
 FARS 2020 Data:
 https://www.nhtsa.gov/file-downloads?p=nhtsa/downloads/FARS/2020/National/
+
 
 ## NHSTA Crash Report Sampling System (CRSS)
 
 https://www.nhtsa.gov/crash-data-systems/crash-report-sampling-system
 
+[Crash Report Sampling System analytical user’s manual, 2016-2020](https://crashstats.nhtsa.dot.gov/Api/Public/Publication/813236 "CRRS manual")
+ 
+
+![CRRS](CRRS-DM.jpg)
+
 CRSS 2020 Data:
 https://www.nhtsa.gov/file-downloads?p=nhtsa/downloads/CRSS/2020/
+
+
 
 ## New York State Vehicle, Snowmobile, and Boat Registrations
 
@@ -29,7 +41,7 @@ New standalone database: "[vPICList]" updated on 9/17/2022, file size: 158 MB
 
 [vPICList]: https://vpic.nhtsa.dot.gov/api/vPICList_lite_2022_09.bak.zip
 
-Covnert MS SQL 2012 back to csv using rebasedata (need to check how to work with a large DB)
+Convert MS SQL 2012 backup to csv using rebasedata.com (need to check how to work with a large DB)
 ```
 curl -F 'files[]=@vPICList_lite_2022_09.bak/vPICList_lite_2022_09.bak' 'https://www.rebasedata.com/api/v1/convert?outputFormat=csv&errorResponse=zip' -o output.zip
 ```
