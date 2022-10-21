@@ -29,7 +29,7 @@ New standalone database: "[vPICList]" updated on 9/17/2022, file size: 158 MB
 
 [vPICList]: https://vpic.nhtsa.dot.gov/api/vPICList_lite_2022_09.bak.zip
 
-Covert MS SQL 2012 back to csv:
+Covnert MS SQL 2012 back to csv using rebasedata (need to check how to work with a large DB)
 ```
 curl -F 'files[]=@vPICList_lite_2022_09.bak/vPICList_lite_2022_09.bak' 'https://www.rebasedata.com/api/v1/convert?outputFormat=csv&errorResponse=zip' -o output.zip
 ```
