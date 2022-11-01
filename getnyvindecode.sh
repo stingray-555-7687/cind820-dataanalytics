@@ -1,4 +1,5 @@
 cd ~/code/repo/cind820-dataanalytics 
+/usr/bin/python3 /Users/lucho/code/repo/cind820-dataanalytics/vin-decode.py 350000 500000 50
 /usr/bin/python3 /Users/lucho/code/repo/cind820-dataanalytics/vin-decode.py 500000 1000000 50
 /usr/bin/python3 /Users/lucho/code/repo/cind820-dataanalytics/vin-decode.py 1000000 2000000 50
 /usr/bin/python3 /Users/lucho/code/repo/cind820-dataanalytics/vin-decode.py 2000000 3000000 50

@@ -83,7 +83,7 @@ fileName = f"tmp/NYDMV-VIN-OUTPUT-ST-{vinStart:08d}-{vinStop:08d}.csv"
 #f = open("tmp/NYDMV-VIN-OUTPUT-ST-" + str(vinStart) + "-" + str(vinStop) + ".csv","w")
 f = open(fileName,"w")
 for idx in range(vinStart,vinStop,vinStep):
-    print("Current index:",idx,round(idx/vinRecords*100,1),"%",end="\r")
+    print("Current index:",idx,round((idx-vinStart)/(vinStop-vinStart)*100,1),"%",end="")
     if idx + vinStep < vinRecords:
         vinsToCheck = vinDf.iloc[idx:idx+vinStep,0]
     else:
@@ -106,12 +106,7 @@ for idx in range(vinStart,vinStop,vinStep):
             f.write(headerStr[1:-1] + "\n")
         #print(vinDf.index[idx + resIdx],vinDf.iloc[idx + resIdx]["ORIG_VIN"],list(vpicResults[resIdx].values()))
         f.write(str(lstToPrint)[1:-1] + "\n")
-    #    #rowLabel = vinDf.index[idx + resIdx]
-    #    for x in vpicFieldToKeep:
-    #        #vinDf.at[rowLabel,x] = vpicResults[resIdx][x]
-    #        vinDf.iat[idx + resIdx,vinDf.columns.get_loc(x)] = vpicResults[resIdx][x]
-    #        #print((rowLabel,x),(resIdx,x))
-    
-    #time.sleep(0.05)
+    print("",end="\r")
 
+print()
 #vinDf.to_csv("tmp/NYDMV-VIN-OUTPUT-99.csv",index=True)
