@@ -1,77 +1,18 @@
 # define libraries to use
 import pandas as pd
 import numpy as np
-#from pathlib import Path
 import requests,json
-#import matplotlib.pyplot as plt
-#%matplotlib inline
 import time
 import sys
 
-
-#vinDf = pd.read_csv("tmp/NYDMV-VIN.csv")
-#vinDf.columns = ["entry","ORIG_VIN"]
-
-"""
-print(dict(vinDf.head(10)))
-dd = dict(vinDf.head(10))
-print(type(dd['entry']))
-print(dict(vinDf.head(10).values))
-print(vinDf.head(10).values)
-ll = vinDf.head(10).values
-print(ll[0][0],ll[0][1])
-"""
-
-vpicFieldToKeep = [
-	"ForwardCollisionWarning",
-	"DynamicBrakeSupport",
-	#"CrashImminentBraking",
-	"CIB",
-	#"PedestrianAutoEmergencyBraking",
-	"PedestrianAutomaticEmergencyBraking",
-	#"BlindSpotWarning",
-	"BlindSpotMon",
-	"BlindSpotIntervention",
-	"LaneDepartureWarning",
-	#"LaneKeepingAssistance",
-	"LaneKeepSystem",
-	"LaneCenteringAssistance",
-	#"BackupCamera",
-	"RearVisibilitySystem",
-	"RearCrossTrafficAlert",
-	"RearAutomaticEmergencyBraking",
-	"ParkAssist",
-	"DaytimeRunningLight",
-	#"HeadlampLightSource",
-	"LowerBeamHeadlampLightSource",
-	#"SemiAutoHeadlampBeamSwitching",
-	"SemiautomaticHeadlampBeamSwitching",
-	"AdaptiveDrivingBeam",
-	"AdaptiveCruiseControl",
-	#"AntilockBrakeSystem",
-	"ABS",
-	#"ElectronicStabilityControl",
-	"ESC",
-	"TPMS",
-	"TractionControl",
-	#"AutoPedestrianAlertingSound",
-	"AutomaticPedestrianAlertingSound",
-	"VIN",
-	"BodyClass",
-	"Make",
-	"MakeID",
-	"Model",
-	"ModelID",
-	"ModelYear",
-	"ErrorCode",
-]
+# decode VIN numbers in tmp/NYDMV-VIN.csv starting at a certain position until a stop position
+# usage:
+# /usr/bin/python3 ~/code/repo/cind820-dataanalytics/vin-decode.py <start> <stop> <step>
 
 vinDf = pd.read_csv("tmp/NYDMV-VIN.csv")
 vinDf.columns = ["entry","ORIG_VIN"]
-#for x in vpicFieldToKeep:
-#    vinDf[x] = None
+
 vinDf.set_index("entry", inplace=True)
-#vinDf.info(verbose=True)
 
 url = 'https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVINValuesBatch/';
 vinStep = np.int64(sys.argv[3])
@@ -80,7 +21,6 @@ vinStart = np.int64(sys.argv[1])
 vinStop = min(np.int64(sys.argv[2]),vinRecords)
 print(vinStart,vinStop,vinStep,vinRecords)
 fileName = f"tmp/NYDMV-VIN-OUTPUT-ST-{vinStart:08d}-{vinStop:08d}.csv"
-#f = open("tmp/NYDMV-VIN-OUTPUT-ST-" + str(vinStart) + "-" + str(vinStop) + ".csv","w")
 f = open(fileName,"w")
 for idx in range(vinStart,vinStop,vinStep):
     print("Current index:",idx,round((idx-vinStart)/(vinStop-vinStart)*100,1),"%",end="")
@@ -102,11 +42,11 @@ for idx in range(vinStart,vinStop,vinStep):
         lstToPrint = [vinDf.index[idx + resIdx],vinDf.iloc[idx + resIdx]["ORIG_VIN"]] + list(vpicResults[resIdx].values())
         # if fist line the write column headings
         if idx == vinStart and resIdx == 0:
-            headerStr = str(list(vinDf.columns) + list(vpicResults[resIdx].keys()))
+            headerStr = str(["entry","ORIG_VIN"] + list(vpicResults[resIdx].keys()))
             f.write(headerStr[1:-1] + "\n")
         #print(vinDf.index[idx + resIdx],vinDf.iloc[idx + resIdx]["ORIG_VIN"],list(vpicResults[resIdx].values()))
         f.write(str(lstToPrint)[1:-1] + "\n")
     print("",end="\r")
 
 print()
-#vinDf.to_csv("tmp/NYDMV-VIN-OUTPUT-99.csv",index=True)
+
