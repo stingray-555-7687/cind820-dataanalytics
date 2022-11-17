@@ -33,17 +33,24 @@ idx = nydmvVinDecodeDf[nydmvVinDecodeDf["ABS"].isin([
     nydmvVinDecodeDf["RearCrossTrafficAlert"].isin(['UNITED STATES (USA)'])].index
 if len(idx) > 0:
     url = 'https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVINValuesBatch/'
-    post_fields = {'format': 'json', 'data':nydmvVinDecodeDf.iloc[idx]["ORIG_VIN"].to_csv(None,index=False,line_terminator=';',header=False)[:-1] }
-    r = requests.post(url, data=post_fields)
-    vpicResults = r.json()["Results"]
-    for resIdx in range(0,len(vpicResults)):
-        print(nydmvVinDecodeDf.iloc[idx[resIdx]]["ORIG_VIN"])
-        for col in vpicResults[resIdx].keys():
-            if col in nydmvVinDecodeDf.columns:
-                if vpicResults[resIdx][col] == "":
-                    nydmvVinDecodeDf.at[idx[resIdx],col] = np.nan
-                else:    
-                    nydmvVinDecodeDf.at[idx[resIdx],col] = vpicResults[resIdx][col]
+    numBatch = 0
+    totRows = len(idx)
+    for startRow in range(0,totRows,50):
+        print(" "*80,"\r",startRow,end="")
+        lastRow = min(startRow + 50, totRows)
+        post_fields = {'format': 'json', 'data':nydmvVinDecodeDf.iloc[idx[startRow:lastRow]]["ORIG_VIN"].to_csv(None,index=False,line_terminator=';',header=False)[:-1] }
+        r = requests.post(url, data=post_fields)
+        vpicResults = r.json()["Results"]
+        for resIdx in range(0,lastRow-startRow):
+            #print(nydmvVinDecodeDf.iloc[idx[resIdx+startRow]]["ORIG_VIN"])
+            for col in vpicResults[resIdx].keys():
+                if col in nydmvVinDecodeDf.columns:
+                    if vpicResults[resIdx][col] == "":
+                        nydmvVinDecodeDf.at[idx[resIdx+startRow],col] = np.nan
+                    else:    
+                        nydmvVinDecodeDf.at[idx[resIdx+startRow],col] = vpicResults[resIdx][col]
+        print(end="\r")
+    print()
 nydmvVinDecodeDf.to_csv("tmp/nydmvvin-goodhdr/NYDMV-VIN-OUTPUT-merged-fixedquotes-cols.csv",index=False)
 nydmvVinDecodeDf.iloc[idx]
 
