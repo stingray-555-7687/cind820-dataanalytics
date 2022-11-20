@@ -13,6 +13,10 @@ https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars
 FARS 2020 Data:
 https://www.nhtsa.gov/file-downloads?p=nhtsa/downloads/FARS/2020/National/
 
+Automobile Area of Impact 
+
+![IMPACT1](FARS-AREAOFIMPACT.jpg)
+
 
 ## NHSTA Crash Report Sampling System (CRSS)
 
