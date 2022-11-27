@@ -68,7 +68,7 @@ Additional NYDMV VIN checks and file curation
 
 ## Data Analysis
 
-7. Notebook: [05-analysismodeling.ipynb]: this file contains the alaysis with the two datasets FARS and NYS DMV records, it is structured as follows:
+7. Notebook: [05-analysismodeling.ipynb](05-analysismodeling.ipynb): this file contains the alaysis with the two datasets FARS and NYS DMV records, it is structured as follows:
 
     1. Data Load and FARS and NYS DMV data alignment: make the two datasets compatible, add additional groupings and general data sanitation
 
@@ -124,9 +124,9 @@ The IMPACT1 variable indicates where impact ocurred. Front impact = 1,11,12
 
 ![IMPACT1](FARS-AREAOFIMPACT.jpg)
 
-[1] Michael D. Keall & Stuart Newstead (2016) Development of a method to rate the primary safety of vehicles using linked New Zealand crash and vehicle licensing data, Traffic Injury Prevention, 17:2, 151-158, DOI: 10.1080/15389588.2015.1045064
+1. Michael D. Keall & Stuart Newstead (2016) Development of a method to rate the primary safety of vehicles using linked New Zealand crash and vehicle licensing data, Traffic Injury Prevention, 17:2, 151-158, DOI: 10.1080/15389588.2015.1045064. https://doi-org.ezproxy.lib.ryerson.ca/10.1080/15389588.2015.1045064
 
-[2] Xuedong Yan & Essam Radwan (2006) Analyses of Rear-End Crashes Based on Classification Tree Models, Traffic Injury Prevention, 7:3, 276-282, DOI: 10.1080/15389580600660062
+2. Xuedong Yan & Essam Radwan (2006) Analyses of Rear-End Crashes Based on Classification Tree Models, Traffic Injury Prevention, 7:3, 276-282, DOI: 10.1080/15389580600660062. https://doi.org/10.1080/15389580600660062
 
 ## Effectiveness (i.e., risk reduction)
 
@@ -140,30 +140,28 @@ Std Error in log odds ration | $\sigma_{ln(R)} = \sqrt{\frac{1}{S_f} + \frac{1}{
 Effectiveness lower limit (95% cofidence) |  $E_{lower} = 1 - e^{(ln(R) + \sigma_{ln(R)})}$
 Effectiveness upper limit (95% cofidence) | $E_{upper} = 1 - e^{(ln(R) - \sigma_{ln(R)})}$
 
-* $S_f = $ Fault accidents with Safety Feature present
-* $S_n = $ Not-fault accidents with Safety Feature present
-* $N_f = $ Fault accidents without Feature present
-* $N_n = $ Not-fault accidents without Safety Feature present
+* $S_f =$ Fault accidents with Safety Feature present
+* $S_n =$ Not-fault accidents with Safety Feature present
+* $N_f =$ Fault accidents without Feature present
+* $N_n =$ Not-fault accidents without Safety Feature present
 
 
 Based on 
-* [3] LEONARD EVANS (1999) Antilock Brake Systems and Risk of Different Types of Crashes in Traffic, Traffic Injury Prevention, 1:1, 5-23, DOI: 10.1080/10286589908915737
-* [4] Simon Sternlund, Johan Strandroth, Matteo Rizzi, Anders Lie & Claes Tingvall (2017) The effectiveness of lane departure warning systems—A reduction in real-world passenger car injury crashes, Traffic Injury Prevention, 18:2, 225-229, DOI: 10.1080/15389588.2016.1230672
+3. Leonard Evans (1999) Antilock Brake Systems and Risk of Different Types of Crashes in Traffic, Traffic Injury Prevention, 1:1, 5-23, DOI: 10.1080/10286589908915737. https://doi.org/10.1080/10286589908915737
+4. Simon Sternlund, Johan Strandroth, Matteo Rizzi, Anders Lie & Claes Tingvall (2017) The effectiveness of lane departure warning systems—A reduction in real-world passenger car injury crashes, Traffic Injury Prevention, 18:2, 225-229, DOI: 10.1080/15389588.2016.1230672. https://doi-org.ezproxy.lib.ryerson.ca/10.1080/15389588.2016.1230672
 
 ## Additional references
 
-* Xu JQ, Murphy SL, Kochanek KD, and Arias E. Deaths: Final data for 2019. National Vital Statistics Reports; vol 70 no 08. Hyattsville, MD: National Center for Health Statistics. 2021. DOI: https://dx.doi.org/10.15620/cdc:106058.
-* M.R. Spencer, H. Hedegaard, M. Garnet. (2021, March). Motor vehicle traffic death rates by sex, age group, and road-user type : United States, 1999-2019. National Center for Health Statistics (U.S.). NCHS data brief ; no. 400. https://stacks.cdc.gov/view/cdc/101759.
-* Stewart, T. (2022, March). Overview of motor vehicle crashes in 2020 (Report No. DOT HS 813 266). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/ Api/Public/ViewPublication/813266
-* National Center for Statistics and Analysis. (2022, May). Distracted driving 2020 (Research Note. Report No. DOT HS 813 309). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813309
-* Insurance Institute for Highway Safety-Highway Loss Data Institute. Driver death rates by make and model. IIHS-HLDI Status Report, Vol. 55, No. 2 May 28, 2020. Pp. 1-5. https:// www.iihs.org/api/datastoredocument/status-report/pdf/55/2
-* Elisa R. Braver, Sergey Y. Kyrychenko & Susan A. Ferguson (2005) Driver Mortality in Frontal Crashes: Comparison of Newer and Older Airbag Designs, Traffic Injury Prevention, 6:1, 24-30, DOI: 10.1080/15389580590903140. https://doi-org.ezproxy.lib.ryerson.ca/ 10.1080/15389580590903140
-* Gabriel E. Ryb, Patricia C. Dischinger & Shiu Ho (2009) Vehicle Model Year and Crash Outcomes: A CIREN Study, Traffic Injury Prevention, 10:6, 560-566, DOI: 10.1080/15389580903271401. https://doi-org.ezproxy.lib.ryerson.ca/ 10.1080/15389580903271401
-* Michael D. Keall & Stuart Newstead (2016) Development of a method to rate the primary safety of vehicles using linked New Zealand crash and vehicle licensing data, Traffic Injury Prevention, 17:2, 151-158, DOI: 10.1080/15389588.2015.1045064. https://doi- org.ezproxy.lib.ryerson.ca/10.1080/15389588.2015.1045064
-* Simon Sternlund, Johan Strandroth, Matteo Rizzi, Anders Lie & Claes Tingvall (2017) The effectiveness of lane departure warning systems—A reduction in real-world passenger car injury crashes, Traffic Injury Prevention, 18:2, 225-229, DOI: 10.1080/15389588.2016.1230672. https://doi-org.ezproxy.lib.ryerson.ca/ 10.1080/15389588.2016.1230672
-* National Center for Statistics and Analysis. (2022, August (Revised)). Fatality Analysis Reporting System analytical user’s manual, 1975-2020 (Report No. DOT HS 813 254). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/Api/ Public/ViewPublication/813254. FARS data access: https://www.nhtsa.gov/file-downloads? p=nhtsa/downloads/FARS/. National Center for Statistics and Analysis. (2022, July (Revised)).
-* Crash Report Sampling System analytical user’s manual, 2016-2020 (Report No. DOT HS 813 236). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/ Api/Public/Publication/813236. CRSS data access: https://www.nhtsa.gov/file-downloads? p=nhtsa/downloads/CRSS/.
-* National Center for Statistics and Analysis. (2022, January). Product information catalog and vehicle listing (vPIC) analytical user's manual, 2020 (Report No. DOT HS 813 252). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/Api/Public/ Publication/813252. VIN tools access: https://vpic.nhtsa.dot.gov/about.html.
+5. Xu JQ, Murphy SL, Kochanek KD, and Arias E. Deaths: Final data for 2019. National Vital Statistics Reports; vol 70 no 08. Hyattsville, MD: National Center for Health Statistics. 2021. DOI: https://dx.doi.org/10.15620/cdc:106058.
+6. M.R. Spencer, H. Hedegaard, M. Garnet. (2021, March). Motor vehicle traffic death rates by sex, age group, and road-user type : United States, 1999-2019. National Center for Health Statistics (U.S.). NCHS data brief ; no. 400. https://stacks.cdc.gov/view/cdc/101759.
+7. Stewart, T. (2022, March). Overview of motor vehicle crashes in 2020 (Report No. DOT HS 813 266). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/ Api/Public/ViewPublication/813266
+8. National Center for Statistics and Analysis. (2022, May). Distracted driving 2020 (Research Note. Report No. DOT HS 813 309). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813309
+9. Insurance Institute for Highway Safety-Highway Loss Data Institute. Driver death rates by make and model. IIHS-HLDI Status Report, Vol. 55, No. 2 May 28, 2020. Pp. 1-5. https:// www.iihs.org/api/datastoredocument/status-report/pdf/55/2
+10. Elisa R. Braver, Sergey Y. Kyrychenko & Susan A. Ferguson (2005) Driver Mortality in Frontal Crashes: Comparison of Newer and Older Airbag Designs, Traffic Injury Prevention, 6:1, 24-30, DOI: 10.1080/15389580590903140. https://doi-org.ezproxy.lib.ryerson.ca/ 10.1080/15389580590903140
+11. Gabriel E. Ryb, Patricia C. Dischinger & Shiu Ho (2009) Vehicle Model Year and Crash Outcomes: A CIREN Study, Traffic Injury Prevention, 10:6, 560-566, DOI: 10.1080/15389580903271401. https://doi-org.ezproxy.lib.ryerson.ca/10.1080/15389580903271401
+12. National Center for Statistics and Analysis. (2022, August (Revised)). Fatality Analysis Reporting System analytical user’s manual, 1975-2020 (Report No. DOT HS 813 254). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/Api/ Public/ViewPublication/813254. FARS data access: https://www.nhtsa.gov/file-downloads? p=nhtsa/downloads/FARS/. National Center for Statistics and Analysis. (2022, July (Revised)).
+13. Crash Report Sampling System analytical user’s manual, 2016-2020 (Report No. DOT HS 813 236). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/ Api/Public/Publication/813236. CRSS data access: https://www.nhtsa.gov/file-downloads? p=nhtsa/downloads/CRSS/.
+14. National Center for Statistics and Analysis. (2022, January). Product information catalog and vehicle listing (vPIC) analytical user's manual, 2020 (Report No. DOT HS 813 252). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/Api/Public/ Publication/813252. VIN tools access: https://vpic.nhtsa.dot.gov/about.html.
 
 
 
