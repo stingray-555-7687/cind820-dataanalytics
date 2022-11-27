@@ -137,8 +137,8 @@ Measure|Formula
 Risk |               $R = \frac{S_f}{S_n}/\frac{N_f}{N_n}$
 Effectiveness (%) |  $E = (1 - R)$
 Std Error in log odds ration | $\sigma_{ln(R)} = \sqrt{\frac{1}{S_f} + \frac{1}{S_n} + \frac{1}{N_f} + \frac{1}{N_n}}$
-Effectiveness lower limit (95% cofidence) |  $E_{lower} = 1 - e^{(ln(R) + \sigma_{ln(R)})}$
-Effectiveness upper limit (95% cofidence) | $E_{upper} = 1 - e^{(ln(R) - \sigma_{ln(R)})}$
+Effectiveness lower limit (95% confidence) |  $E_{lower} = 1 - e^{(ln(R) + \sigma_{ln(R)})}$
+Effectiveness upper limit (95% confidence) | $E_{upper} = 1 - e^{(ln(R) - \sigma_{ln(R)})}$
 
 * $S_f =$ Fault accidents with Safety Feature present
 * $S_n =$ Not-fault accidents with Safety Feature present
