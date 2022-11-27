@@ -1,4 +1,4 @@
-                                                                L. Sandoval CIND 820 D1H Fall 2022
+L. Sandoval CIND 820 D1H Fall 2022
 
 # CIND820 Data Analytics Project Fall 2022
 
