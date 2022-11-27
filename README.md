@@ -147,7 +147,9 @@ Effectiveness upper limit (95% confidence) | $E_{upper} = 1 - e^{(ln(R) - \sigma
 
 
 Based on 
+
 3. Leonard Evans (1999) Antilock Brake Systems and Risk of Different Types of Crashes in Traffic, Traffic Injury Prevention, 1:1, 5-23, DOI: 10.1080/10286589908915737. https://doi.org/10.1080/10286589908915737
+
 4. Simon Sternlund, Johan Strandroth, Matteo Rizzi, Anders Lie & Claes Tingvall (2017) The effectiveness of lane departure warning systems—A reduction in real-world passenger car injury crashes, Traffic Injury Prevention, 18:2, 225-229, DOI: 10.1080/15389588.2016.1230672. https://doi-org.ezproxy.lib.ryerson.ca/10.1080/15389588.2016.1230672
 
 ## Additional references
