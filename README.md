@@ -103,15 +103,15 @@ Additional NYDMV VIN checks and file curation
 
     7. Accident Risk Reduction due to Safety Featyres based on Induced exposure metrics. This would be most important section in the reports, presenting:
 
-        7.1. Overall Safey Feature effectiveness
+        a. Overall Safey Feature effectiveness
 
-        7.2. Safety Feature effectiveness under different road, evnronment features and/or conditions
+        b. Safety Feature effectiveness under different road, evnronment features and/or conditions
 
-        7.3. Safety Feature effectiveness fir different driver characteristics
+        c. Safety Feature effectiveness fir different driver characteristics
 
-        7.4. Safety effectivieness for Top 20 vehicles appearing in the FARS data
+        d. Safety effectivieness for Top 20 vehicles appearing in the FARS data
 
-        7.6. Comparatively effectiveness of safety features for the Top 20 vehicles
+        e. Comparatively effectiveness of safety features for the Top 20 vehicles
 
 
 # References used in the analysis above
