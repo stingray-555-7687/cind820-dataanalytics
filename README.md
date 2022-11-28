@@ -10,7 +10,10 @@ The purpose of this study is to use of publicly available data provided by Natio
 
 The FARS dataset is a census of fatal motor vehicle crashes, i.e., it contains the actual records of fatal accidents in the United States. The dataset is segregated into multiple tables that capture accident information in a very detailed set of data elements or fields. The full detail of the data dictionary as well as data gathering methodology for FARS is described in [1]. For Year 2020 the FARS dataset includes 35,766 entries for accidents and 54,271 for vehicles, and a total of 33 tables covering different aspects of accident information.
 
-National Center for Statistics and Analysis. (2022, August (Revised)). Fatality Analysis Reporting System analytical user’s manual, 1975-2020 (Report No. DOT HS 813 254). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813254. FARS data access: https://www.nhtsa.gov/file-downloads?p=nhtsa/downloads/FARS/. National Center for Statistics and Analysis. (2022, July (Revised))
+Datset location:
+https://www.nhtsa.gov/file-downloads?p=nhtsa/downloads/FARS/
+
+See reference 12 below.
 
 **FARS ER diagram**
 
@@ -50,7 +53,7 @@ Handles reading CRSS data doing some basic verifications and cleaning and presen
 
 4. Notebook: [02-nysdmv-dataload.ipynb](02-nysdmv-dataload.ipynb)
 
-This notebook handles reading FARS data, doing some basic verifications and cleaning and presenting a few descriptive statistics of it. It also saves some of the processed output to be used as input in the additional stages for NYDMV.
+This notebook handles reading registration records from New York State Department of Motor Vehicles (NYSDMV), doing some basic verifications and cleaning and presenting a few descriptive statistics of it. It also saves some of the processed output to be used as input in the additional stages for NYDMV.
 
 5. NYDMV VIN decoding scripts:
 
