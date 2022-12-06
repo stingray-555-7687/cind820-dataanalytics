@@ -69,6 +69,11 @@ This notebook handles reading registration records from New York State Departmen
 
 Additional NYDMV VIN checks and file curation
 
+7. Notebook: [04a-nydmv-vinchecks.ipynb](04a-nydmv-vinchecks.ipynb)
+
+Desciptive stats for NYDMV using VIN decode data
+
+
 ## Data Analysis
 
 7. Notebook: [05-analysismodeling.ipynb](05-analysismodeling.ipynb): this file contains the alaysis with the two datasets FARS and NYS DMV records, it is structured as follows:
@@ -100,13 +105,13 @@ Additional NYDMV VIN checks and file curation
 
     4. Determine Feature Correlation
 
-    5. ML algorithms tested: Decision Tree, Logistic Regression, Random Forest. SKlaern NBClassifier was attemped but conitnues to fail due to [this issue](https://github.com/scikit-learn/scikit-learn/issues/16028). Still looking into workarounds. Feature imporance will be gathered form output of these algorithms.
+    5. ML algorithms tested: Decision Tree, Logistic Regression, Random Forest. Feature imporance will be gathered form output of these algorithms.
 
     6. Use NYS Registration compared against FARS data to Identify Fatal Accident Rates for Most Popular Vehicles Models and Vehicle Manufacture Years. Pending: adding fatal accidents rates for vehicles with different safety features.
 
     7. Accident Risk Reduction due to Safety Featyres based on Induced exposure metrics. This would be most important section in the reports, presenting:
 
-        a. Overall Safey Feature effectiveness
+        a. Overall Safey Feature effectiveness and safety effectiveness for Model Year vs preivios model Year
 
         b. Safety Feature effectiveness under different road, evnronment features and/or conditions
 
@@ -139,9 +144,9 @@ Measure|Formula
 -- | --
 Risk |               $R = \frac{S_f}{S_n}/\frac{N_f}{N_n}$
 Effectiveness (%) |  $E = (1 - R)$
-Std Error in log odds ration | $\sigma_{ln(R)} = \sqrt{\frac{1}{S_f} + \frac{1}{S_n} + \frac{1}{N_f} + \frac{1}{N_n}}$
-Effectiveness lower limit (95% confidence) |  $E_{lower} = 1 - e^{(ln(R) + \sigma_{ln(R)})}$
-Effectiveness upper limit (95% confidence) | $E_{upper} = 1 - e^{(ln(R) - \sigma_{ln(R)})}$
+Std Error of the log odds ratio | $\sigma_{ln(R)} = \sqrt{\frac{1}{S_f} + \frac{1}{S_n} + \frac{1}{N_f} + \frac{1}{N_n}}$
+Effectiveness lower limit (95% confidence) |  $E_{lower} = 1 - e^{(ln(R) + 1.64\sigma_{ln(R)})}$
+Effectiveness upper limit (95% confidence) | $E_{upper} = 1 - e^{(ln(R) - 1.64\sigma_{ln(R)})}$
 
 * $S_f =$ Fault accidents with Safety Feature present
 * $S_n =$ Not-fault accidents with Safety Feature present
@@ -165,8 +170,11 @@ Based on
 10. Elisa R. Braver, Sergey Y. Kyrychenko & Susan A. Ferguson (2005) Driver Mortality in Frontal Crashes: Comparison of Newer and Older Airbag Designs, Traffic Injury Prevention, 6:1, 24-30, DOI: 10.1080/15389580590903140. https://doi-org.ezproxy.lib.ryerson.ca/ 10.1080/15389580590903140
 11. Gabriel E. Ryb, Patricia C. Dischinger & Shiu Ho (2009) Vehicle Model Year and Crash Outcomes: A CIREN Study, Traffic Injury Prevention, 10:6, 560-566, DOI: 10.1080/15389580903271401. https://doi-org.ezproxy.lib.ryerson.ca/10.1080/15389580903271401
 12. National Center for Statistics and Analysis. (2022, August (Revised)). Fatality Analysis Reporting System analytical user’s manual, 1975-2020 (Report No. DOT HS 813 254). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/Api/ Public/ViewPublication/813254. FARS data access: https://www.nhtsa.gov/file-downloads? p=nhtsa/downloads/FARS/. National Center for Statistics and Analysis. (2022, July (Revised)).
-13. Crash Report Sampling System analytical user’s manual, 2016-2020 (Report No. DOT HS 813 236). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/ Api/Public/Publication/813236. CRSS data access: https://www.nhtsa.gov/file-downloads? p=nhtsa/downloads/CRSS/.
-14. National Center for Statistics and Analysis. (2022, January). Product information catalog and vehicle listing (vPIC) analytical user's manual, 2020 (Report No. DOT HS 813 252). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/Api/Public/ Publication/813252. VIN tools access: https://vpic.nhtsa.dot.gov/about.html.
+13. National Center for Statistics and Analysis. (2022, January). Product information catalog and vehicle listing (vPIC) analytical user's manual, 2020 (Report No. DOT HS 813 252). National Highway Traffic Safety Administration. https://crashstats.nhtsa.dot.gov/Api/Public/ Publication/813252. VIN tools access: https://vpic.nhtsa.dot.gov/about.html.
+14. Haight, F. A. (1973). Induced exposure. Accident Analysis & Prevention,Volume 5, Issue 2, Pages 111-126, ISSN 0001-4575, DOI:10.1016/0001-4575(73)90019-5. https://doi.org/10.1016/0001-4575(73)90019-5 
+15. Odds ratio. (2022, December 2). In Wikipedia. https://en.wikipedia.org/wiki/Odds_ratio. Version link: https://en.wikipedia.org/w/index.php?title=Odds_ratio&oldid=1125226966  
+
+
 
 
 
